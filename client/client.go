@@ -9,5 +9,6 @@ import (
 func main() {
 	//GetRequest()
 	//PostForm()
-	httpclient.MyGetRequest("https://rest.nexmo.com/sms/json")
+	//httpclient.MyGetJsonResp("https://rest.nexmo.com/sms/json")
+	httpclient.MyGet("http://localhost:8080")
 }
