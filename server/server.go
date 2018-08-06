@@ -5,7 +5,9 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/GeertJohan/go.rice"
 	"github.com/antlossway/goweb/util"
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -16,9 +18,13 @@ func main() {
 	//	db := database{"shoes": 50, "socks": 5} //db is map[string]int
 	//	log.Fatal(http.ListenAndServe("localhost:8080", db))
 
-	http.Handle("/", http.FileServer(http.Dir("./static")))
-	//http.Handle("/cv", http.StripPrefix("/cv", http.FileServer(http.Dir("./static"))))
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	//http.Handle("/", http.FileServer(http.Dir("./static")))
+	//log.Fatal(http.ListenAndServe(":8080", nil))
+
+	r := mux.NewRouter()
+	//router.PathPrefix("/").Handler(http.FileServer(rice.MustFindBox("website").HTTPBox()))
+	r.PathPrefix("/go/").Handler(http.StripPrefix("/go/", http.FileServer(rice.MustFindBox("static").HTTPBox())))
+	log.Fatal(http.ListenAndServe(":8080", r))
 }
 
 type dollars float32
