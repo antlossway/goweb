@@ -27,7 +27,7 @@ func init() {
 	// define dirs
 	dir1 := &embedded.EmbeddedDir{
 		Filename:   "",
-		DirModTime: time.Unix(1532793073, 0),
+		DirModTime: time.Unix(1532793240, 0),
 		ChildFiles: []*embedded.EmbeddedFile{
 			file2, // "app.js"
 			file3, // "custom.css"
@@ -35,26 +35,16 @@ func init() {
 
 		},
 	}
-	dir5 := &embedded.EmbeddedDir{
-		Filename:   "static",
-		DirModTime: time.Unix(1532793073, 0),
-		ChildFiles: []*embedded.EmbeddedFile{},
-	}
 
 	// link ChildDirs
-	dir1.ChildDirs = []*embedded.EmbeddedDir{
-		dir5, // "static"
-
-	}
-	dir5.ChildDirs = []*embedded.EmbeddedDir{}
+	dir1.ChildDirs = []*embedded.EmbeddedDir{}
 
 	// register embeddedBox
 	embedded.RegisterEmbeddedBox(`website`, &embedded.EmbeddedBox{
 		Name: `website`,
-		Time: time.Unix(1532793073, 0),
+		Time: time.Unix(1532793240, 0),
 		Dirs: map[string]*embedded.EmbeddedDir{
-			"":       dir1,
-			"static": dir5,
+			"": dir1,
 		},
 		Files: map[string]*embedded.EmbeddedFile{
 			"app.js":     file2,

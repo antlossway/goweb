@@ -14,6 +14,12 @@ go get github.com/GeertJohan/go.rice/rice
 go get github.com/gorilla/mux (create API)
 */
 
+/* to compile, go to the same directory of main.go
+run `rice embed-go`, a rice-box.go file is created, which contains all the data of website
+then either run `go build *.go`, which will create a "main" file, run ./main
+or `go install `go install github.com/antlossway/goweb/myprject`, which will create in $GOPATH/bin/myproject
+*/
+
 func main() {
 	r := mux.NewRouter()
 	//router.PathPrefix("/").Handler(http.FileServer(rice.MustFindBox("website").HTTPBox()))

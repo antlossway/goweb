@@ -1,0 +1,45 @@
+{{ define "base" }}
+<html>
+    <head>
+            <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                {{ range .Tab }}
+                <li><a href="/{{ .}}"  target="_blank">{{ . }}</a></li>
+                {{end}}
+            </ul>
+        </nav>
+        <h1>{{ .Title }}</h1>
+        <form action="/Submit" method="POST" target="_blank">
+        <table>
+        {{range .ContactList}}
+        <tr><td>
+    
+     <input type="checkbox" name="company{{ .Company }}" value="{{ .Company }}:{{ .Emails }}">{{ .Company }}</input>
+        </td>
+        <td>{{ .Emails }}</td>
+    </tr>
+        {{end}}
+    </table>
+        
+            <label>Subject</label>    
+            
+            <input type="text" size="50" name="subject" value="{{ .Subject }}"></input><br>
+     
+
+       
+        <textarea rows="20" cols="100" name="content" value="{{ .Content }}"></textarea>
+     <br>
+        
+        <input type="submit" value="Submit"></input>
+
+        </form>
+
+        {{ if .Result}}
+        <p>{{ .Result }}</p>
+        {{end}}
+    </body>
+</html>
+{{end}}

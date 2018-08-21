@@ -17,6 +17,7 @@ func check(e error) {
 	}
 }
 
+//create a deck and record it in file
 func NewDeck() deck {
 	numlist := []string{"one", "two", "three", "four"}
 	colorlist := []string{"Red", "Green", "Blue"}

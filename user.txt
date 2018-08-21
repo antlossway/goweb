@@ -1,2 +1,0 @@
-apple,apple123
-banana,banana123
