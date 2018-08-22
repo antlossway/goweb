@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"html/template"
-	"log"
 	"net/smtp"
 	"path/filepath"
 	"strings"
@@ -36,8 +35,8 @@ func (app *App) SendHtmlEmail(msg *Message) error {
 		htmlbody
 
 	//debug
-	log.Println("App setting:", app)
-	log.Println("body of email:", body)
+	//log.Println("App setting:", app)
+	//log.Println("body of email:", body)
 
 	auth := smtp.PlainAuth("", app.SMTPusername, app.SMTPpassword, app.SMTPhost)
 	toList := strings.Split(msg.To, ",")

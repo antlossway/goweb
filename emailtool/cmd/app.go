@@ -43,7 +43,7 @@ func GetInit() *App {
 	err = json.Unmarshal(bs, &myEmailVar)
 
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Fatalln("json.Unmarshal myEmailVar: ", err.Error())
 	}
 
 	//get SMTP setting
@@ -59,7 +59,7 @@ func GetInit() *App {
 	err = json.Unmarshal(bs, &mysmtp)
 
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Fatalln("json.Unmarshal mysmtp:", err.Error())
 	}
 
 	//debug

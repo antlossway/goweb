@@ -42,7 +42,7 @@ func (app *App) getListFromJSON(cfg string) []Contact {
 	err = json.Unmarshal(bs, &contactList)
 
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Fatalln("json.Unmarshal contactList:", err.Error())
 	}
 
 	return contactList
