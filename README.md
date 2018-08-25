@@ -15,4 +15,18 @@ under cfg directory, there are several files:
 - notification_contact_json.cfg: contact list to send notificactions (e.g server maintenance, outage..etc)
 
 
+# examples
+Some example code
+
+## httpclient
+example codes for http client
+
+## website
+example to bundle a static website and release as a single go file
+
+## utils
+some small tools 
+### random
+###
+
 
