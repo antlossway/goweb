@@ -21,12 +21,12 @@ Some example code
 ## httpclient
 example codes for http client
 
-## website
+## bundle_website
 example to bundle a static website and release as a single go file
 
-## utils
+# utils
 some small tools 
-### random
-###
+### random.go: generate a random number
+### reverse.go: reverse a string
 
 
